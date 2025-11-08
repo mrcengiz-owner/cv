@@ -1,0 +1,179 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Murat Cengiz - Software Developer & Space Enthusiast</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <!-- Animated Stars Background -->
+  <div class="stars" id="stars"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">MC</div>
+    <ul class="nav-links">
+      <li><a href="#about">Hakkımda</a></li>
+      <li><a href="#skills">Yetenekler</a></li>
+      <li><a href="#experience">Deneyim</a></li>
+      <li><a href="#contact">İletişim</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>MURAT CENGİZ</h1>
+      <p class="subtitle">Software Developer & Space Enthusiast</p>
+      <p class="tagline">From Code to Cosmos 🚀</p>
+      <div class="cta-buttons">
+        <a href="#contact" class="btn btn-primary">İletişime Geç</a>
+        <a href="#about" class="btn btn-secondary">Daha Fazla Keşfet</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2 class="section-title">Hakkımda</h2>
+    <div class="about-content">
+      <div class="profile-image">👨‍💻</div>
+      <div class="about-text">
+        <h3>6 Yaşında Başlayan Bir Yolculuk</h3>
+        <p>
+          Bilgisayarlara 6 yaşında tanıştım, 10 yaşımda yazılım geliştirmeye başladım. 
+          Mardin Artuklu Üniversitesi Bilgisayar Programcılığı bölümünden mezun oldum.
+        </p>
+        <p>
+          Günümüzde yapay zeka, web teknolojileri ve Linux sunucu yönetimi üzerine çalışmaktayım. 
+          Freelance olarak müşterilere özel yazılım çözümleri geliştiriyorum.
+        </p>
+        <p>
+          <strong>Geleceğe Dair Hedefim:</strong> Uzay sistemleri mühendisliği alanında çalışarak, 
+          yazılım bilgimi uzay teknolojilerine uygulamak istiyorum. 🌌
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2 class="section-title">Teknik Yetenekler</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>💻 Backend Development</h3>
+        <ul>
+          <li>C# & VB.NET</li>
+          <li>Python (Django)</li>
+          <li>Java</li>
+          <li>MySQL & MSSQL</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>🎨 Frontend Development</h3>
+        <ul>
+          <li>HTML5 & CSS3</li>
+          <li>JavaScript</li>
+          <li>React.js (Öğreniyor)</li>
+          <li>Vue.js (Öğreniyor)</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>🖥️ Server & DevOps</h3>
+        <ul>
+          <li>Linux Server Kurulumu</li>
+          <li>cPanel, Plesk, Webmin</li>
+          <li>Apache & Nginx</li>
+          <li>SSH & Terminal</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>🌐 Diğer Yetenekler</h3>
+        <ul>
+          <li>Problem Çözme</li>
+          <li>Liderlik</li>
+          <li>İngilizce (A2)</li>
+          <li>Almanca (A2)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience">
+    <h2 class="section-title">Deneyim</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3>Freelance Yazılım Geliştirici</h3>
+          <p class="date">2014 - Günümüz</p>
+          <p>Müşteri taleplerine göre web ve masaüstü uygulamaları geliştirme. Mevcut yazılımlarda performans iyileştirmesi.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3>Yazılım Desteği & Eğitim</h3>
+          <p class="date">2016 - 2017 | Datakod & METADATA Yazılım</p>
+          <p>Satılan yazılımlar için teknik destek ve SQL ile özel raporlama sistemleri geliştirme.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3>Donanım & Yazılım Teknikeri</h3>
+          <p class="date">2013 - 2014 | Midyat Bilişim</p>
+          <p>Teknik servis ve yazılım kurulum hizmetleri.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3>Stajyer</h3>
+          <p class="date">Şubat 2014 | Çözüm Bilişim</p>
+          <p>WordPress, Drupal, Magento kurulum ve desteği.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3>Satış & Yazılım Desteği</h3>
+          <p class="date">2010 - 2011 | Baran Bilgisayar</p>
+          <p>İlk iş deneyimim: müşteri ilişkileri ve temel teknik destek.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2 class="section-title">İletişim</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="icon">📞</div>
+        <h3>Telefon</h3>
+        <a href="tel:+905375123099">+90 537 512 3099</a>
+      </div>
+      <div class="contact-card">
+        <div class="icon">✉️</div>
+        <h3>E-posta</h3>
+        <a href="mailto:mracengiz@gmail.com">mracengiz@gmail.com</a>
+      </div>
+      <div class="contact-card">
+        <div class="icon">📍</div>
+        <h3>Konum</h3>
+        <p>Mardin, Türkiye</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Murat Cengiz. Coded with 💙 and ☕</p>
+  </footer>
+
+  <!-- PDF Download Button -->
+  <a href="{% url 'download_cv' %}" class="pdf-btn" title="CV İndir (PDF)">📄</a>
+
+  <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
+
