@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-vvy7qkwf#%p$e2(lv8ayi
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False 
 
-ALLOWED_HOSTS = ['mrcengiz.com', 'www.mrcengiz.com', 'server.mrcengiz.com']
+ALLOWED_HOSTS = ['mrcengiz.com', 'www.mrcengiz.com', 'server.mrcengiz.com', '127.0.0.1', 'localhost']
 
 # Cloudflare kullandığınız için bu ÇOK ÖNEMLİ, yoksa Admin paneline giremezsiniz:
 CSRF_TRUSTED_ORIGINS = ['https://mrcengiz.com', 'https://www.mrcengiz.com']
