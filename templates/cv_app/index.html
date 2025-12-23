@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Murat Cengiz - Software Developer & Space Enthusiast</title>
+  <title>{{ profile.full_name }} - {{ profile.subtitle }}</title>
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
@@ -25,9 +25,9 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <h1>MURAT CENGİZ</h1>
-      <p class="subtitle">Software Developer & Space Enthusiast</p>
-      <p class="tagline">From Code to Cosmos 🚀</p>
+      <h1>{{ profile.full_name }}</h1>
+      <p class="subtitle">{{ profile.subtitle }}</p>
+      <p class="tagline">{{ profile.tagline }}</p>
       <div class="cta-buttons">
         <a href="#contact" class="btn btn-primary">İletişime Geç</a>
         <a href="#about" class="btn btn-secondary">Daha Fazla Keşfet</a>
@@ -39,21 +39,10 @@
   <section id="about">
     <h2 class="section-title">Hakkımda</h2>
     <div class="about-content">
-      <div class="profile-image">👨‍💻</div>
+      <div class="profile-image">{{ profile.about_emoji }}</div>
       <div class="about-text">
-        <h3>6 Yaşında Başlayan Bir Yolculuk</h3>
-        <p>
-          Bilgisayarlara 6 yaşında tanıştım, 10 yaşımda yazılım geliştirmeye başladım. 
-          Mardin Artuklu Üniversitesi Bilgisayar Programcılığı bölümünden mezun oldum.
-        </p>
-        <p>
-          Günümüzde yapay zeka, web teknolojileri ve Linux sunucu yönetimi üzerine çalışmaktayım. 
-          Freelance olarak müşterilere özel yazılım çözümleri geliştiriyorum.
-        </p>
-        <p>
-          <strong>Geleceğe Dair Hedefim:</strong> Uzay sistemleri mühendisliği alanında çalışarak, 
-          yazılım bilgimi uzay teknolojilerine uygulamak istiyorum. 🌌
-        </p>
+        <h3>{{ profile.about_title }}</h3>
+        {{ profile.about_text|linebreaks }}
       </div>
     </div>
   </section>
@@ -62,42 +51,16 @@
   <section id="skills">
     <h2 class="section-title">Teknik Yetenekler</h2>
     <div class="skills-grid">
+      {% for category in skill_categories %}
       <div class="skill-card">
-        <h3>💻 Backend Development</h3>
+        <h3>{{ category.icon }} {{ category.name }}</h3>
         <ul>
-          <li>C# & VB.NET</li>
-          <li>Python (Django)</li>
-          <li>Java</li>
-          <li>MySQL & MSSQL</li>
+          {% for skill in category.skills.all %}
+          <li>{{ skill.name }}</li>
+          {% endfor %}
         </ul>
       </div>
-      <div class="skill-card">
-        <h3>🎨 Frontend Development</h3>
-        <ul>
-          <li>HTML5 & CSS3</li>
-          <li>JavaScript</li>
-          <li>React.js (Öğreniyor)</li>
-          <li>Vue.js (Öğreniyor)</li>
-        </ul>
-      </div>
-      <div class="skill-card">
-        <h3>🖥️ Server & DevOps</h3>
-        <ul>
-          <li>Linux Server Kurulumu</li>
-          <li>cPanel, Plesk, Webmin</li>
-          <li>Apache & Nginx</li>
-          <li>SSH & Terminal</li>
-        </ul>
-      </div>
-      <div class="skill-card">
-        <h3>🌐 Diğer Yetenekler</h3>
-        <ul>
-          <li>Problem Çözme</li>
-          <li>Liderlik</li>
-          <li>İngilizce (A2)</li>
-          <li>Almanca (A2)</li>
-        </ul>
-      </div>
+      {% endfor %}
     </div>
   </section>
 
@@ -105,41 +68,15 @@
   <section id="experience">
     <h2 class="section-title">Deneyim</h2>
     <div class="timeline">
+      {% for exp in experiences %}
       <div class="timeline-item">
         <div class="timeline-content">
-          <h3>Freelance Yazılım Geliştirici</h3>
-          <p class="date">2014 - Günümüz</p>
-          <p>Müşteri taleplerine göre web ve masaüstü uygulamaları geliştirme. Mevcut yazılımlarda performans iyileştirmesi.</p>
+          <h3>{{ exp.job_title }}</h3>
+          <p class="date">{{ exp.date_range }}{% if exp.company %} | {{ exp.company }}{% endif %}</p>
+          <p>{{ exp.description }}</p>
         </div>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <h3>Yazılım Desteği & Eğitim</h3>
-          <p class="date">2016 - 2017 | Datakod & METADATA Yazılım</p>
-          <p>Satılan yazılımlar için teknik destek ve SQL ile özel raporlama sistemleri geliştirme.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <h3>Donanım & Yazılım Teknikeri</h3>
-          <p class="date">2013 - 2014 | Midyat Bilişim</p>
-          <p>Teknik servis ve yazılım kurulum hizmetleri.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <h3>Stajyer</h3>
-          <p class="date">Şubat 2014 | Çözüm Bilişim</p>
-          <p>WordPress, Drupal, Magento kurulum ve desteği.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <h3>Satış & Yazılım Desteği</h3>
-          <p class="date">2010 - 2011 | Baran Bilgisayar</p>
-          <p>İlk iş deneyimim: müşteri ilişkileri ve temel teknik destek.</p>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </section>
 
@@ -147,27 +84,23 @@
   <section id="contact">
     <h2 class="section-title">İletişim</h2>
     <div class="contact-grid">
+      {% for info in contact_infos %}
       <div class="contact-card">
-        <div class="icon">📞</div>
-        <h3>Telefon</h3>
-        <a href="tel:+905375123099">+90 537 512 3099</a>
+        <div class="icon">{{ info.icon }}</div>
+        <h3>{{ info.title }}</h3>
+        {% if info.link %}
+        <a href="{{ info.link }}">{{ info.value }}</a>
+        {% else %}
+        <p>{{ info.value }}</p>
+        {% endif %}
       </div>
-      <div class="contact-card">
-        <div class="icon">✉️</div>
-        <h3>E-posta</h3>
-        <a href="mailto:mracengiz@gmail.com">mracengiz@gmail.com</a>
-      </div>
-      <div class="contact-card">
-        <div class="icon">📍</div>
-        <h3>Konum</h3>
-        <p>Mardin, Türkiye</p>
-      </div>
+      {% endfor %}
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Murat Cengiz. Coded with 💙 and ☕</p>
+    <p>{{ profile.footer_text }}</p>
   </footer>
 
   <!-- PDF Download Button -->
