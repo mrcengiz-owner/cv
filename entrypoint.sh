@@ -7,6 +7,10 @@ set -e
 echo "Running migrations..."
 python manage.py migrate
 
+# Create Superuser (Admin)
+echo "Checking/Creating Superuser..."
+python create_admin.py
+
 # Collect static files
 echo "Collecting static files..."
 python manage.py collectstatic --noinput
